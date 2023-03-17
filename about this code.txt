@@ -1,0 +1,13 @@
+This is a Python script that implements a password manager using the AES256 encryption algorithm. The script has several functions such as adding passwords, deleting passwords, and finding passwords for specific applications. The passwords are stored in a text file using the Saver class.
+
+The script begins by importing two modules, "encrypt" and "save", which presumably contain the implementation of the AES256 encryption algorithm and the Saver class, respectively. The script then initializes a variable "masterPasswordCheck" with a generated key.
+
+Next, the Saver class is instantiated to read the passwords from the "passwords.txt" file. A boolean variable "loggedIn" is initialized to False, and the script enters an infinite loop. Inside the loop, the script prompts the user for the master password and uses it to create an AES256 encrypter object. The script then checks if the encrypted string of "textToMatch" matches the "masterPasswordCheck" variable. If the check fails, the script prompts the user to enter the password again.
+
+If the check succeeds, the user is considered logged in and can access the password manager's functionalities. The script clears the screen and presents a menu of three options: finding a password, adding a password, and deleting a password. The script prompts the user to choose an option and the application name.
+
+If the user selects option 1 (finding a password), the script iterates over the passwords list and searches for the given application name in the decrypted application name stored in the first element of each password entry. If a match is found, the script displays the application name and the decrypted password stored in the second element of the entry.
+
+If the user selects option 2 (adding a password), the script prompts the user for the password and adds an encrypted entry with the given application name and password to the passwords list. The list is then saved to the "passwords.txt" file using the Saver class.
+
+If the user selects option 3 (deleting a password), the script iterates over the passwords list and searches for the given application name in the decrypted application name stored in the first element of each password entry. If a match is found, the script prompts the user for confirmation and deletes the corresponding entry from the passwords list and saves it to the "passwords.txt" file using the Saver class.
